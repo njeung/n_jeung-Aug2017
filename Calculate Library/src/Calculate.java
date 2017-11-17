@@ -75,7 +75,7 @@ public class Calculate {
 				}
 			}
 		
-		public static int min (int number1, int number2) {
+		public static double min (double number1, double number2) {
 			if (number1>number2) {
 				return number2;
 			}else return number1;
@@ -107,11 +107,11 @@ public class Calculate {
 			
 			}
 		public static int factorial (int number1) {
-			int result = number1;
-			for (int i=1; i< number1; i++) {
-				result *= number1-1;
-			}
-			return result;
+		int answer=1;
+		for (int i = number1; i>=1; i--){
+			answer=answer*i;
+		}
+		return answer;
 		}
 		public static boolean isPrime(int input) {
 			if(input < 2) {
@@ -148,38 +148,24 @@ public class Calculate {
 		}
 // Part 4
 		//This will take in 3 ints and return the roots of the numbers
-		public static String quadForm(int number1, int number2, int number3) {
-			String answer= "";
-					double w;
-					double x;
-			double y;
-			double z;
-			if (Calculate.discriminant(number1, number2, number3)==0) {
-				
-	w = (-number2 + sqrt(discriminant(number1, number2, number3)))/(2 * number1);
-	y= Calculate.round2(w);
-	answer= String.valueOf(y);
-			}else if(Calculate.discriminant(number1, number2, number3)<0) {
-				
-				answer= "no real roots";
-	
-				
-			}else if (Calculate.discriminant(number1, number2, number3)>0) {
-				x = ((-number2-Calculate.sqrt(Calculate.discriminant(number1, number2, number3)))/(2*number1));
-				z = Calculate.round2(x);
-				w = ((-number2+Calculate.sqrt(Calculate.discriminant(number1, number2, number3)))/(2*number1));
-				y = Calculate.round2(w);
-				if (y>z) {
-					answer = String.valueOf(y) + "and"+ String.valueOf(z);
-				}else { 
-						answer= String.valueOf(z)+ "and"+ String.valueOf(y);
-				}
+		public static String quadForm(double a,double b,double c) {
+			double discriminant=discriminant(a,b,c);
+			double result;
+			if(discriminant<0) {
+				return "no real roots";
+			}else if(discriminant==0) {
+				result= (-b)/(2*a);
+				return round2(result)+"";
+			}else {
+				double root1=((-b)+sqrt(discriminant))/(2*a);
+				double root2=((-b)-sqrt(discriminant))/(2*a);
+				double number1= min(root1,root2);
+				double number2= max(root1,root2);
+				return round2(number1)+" and "+round2(number2);
 			}
-			return answer;
 		}
 }
-				
-				
+
 
 
 
@@ -188,5 +174,5 @@ public class Calculate {
 
 //Nicole Jeung
 //September 28, 2017
-		
-	
+
+
