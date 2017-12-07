@@ -47,7 +47,7 @@ return array
 /*
 * Write a method named remove that accepts an array of integers arr and an integer idx 
 * and returns an array of integers consisting of all of the elements of arr 
-* except for the element at index idx (thus, the returned array has a length of arr.length – 1). 
+* except for the element at index idx (thus, the returned array has a length of arr.length ï¿½ 1). 
 * You can assume arr has at least two elements.
 */
 public static int[] remove(int[] arr, int idx){
@@ -75,22 +75,36 @@ public static int sumEven(int[] arr)
 {
 assert (arr.length > 0);
 
+int sum = 0;
+int [] sumEvenArr = new int [arr.length];
+for(int i = 0; i < arr.length; i++) {
+		if(i % 2 == 0) {
+			sum = arr[i] + sum;
+			}
+	}
+	return sum;
+
 }
 
 /*
 * Write a method rotateRight that accepts an array of integers arr 
 * and does not return a value. 
 * The rotateRight method moves each element of arr one index to the right 
-* (element 0 goes to element 1, element 1 goes to element 2, …, element n-1 goes to element 0). 
+* (element 0 goes to element 1, element 1 goes to element 2, ï¿½, element n-1 goes to element 0). 
 * You can assume arr has at least one element.
 */
 public static void rotateRight(int[] arr)
 {
 assert (arr.length > 0);
+int last = arr[arr.length-1];
+for(int i = arr.length-1; i >= 1; i--) {
+	arr[i] = arr[i-1];
+}
+arr[0] = last;
 
 }
-
 /*
+
 * Write a main method that will 
 Contain
 integer arrays a1, a2, sumArr, appendArr, removeArr
@@ -109,15 +123,27 @@ On their own lines print out (use Arrays.toString to transform arrays into a pri
 sumArr
 appendArr
 removeArr
-sumOfEvens (an int you don’t need Arrays.toString)
+sumOfEvens (an int you donï¿½t need Arrays.toString)
 a1
 */
-
 public static void main(String[] args) 
 {
 int [] a1= {5, 10, 15, 20, 25, 30, 35, 40};
 int [] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
 int [] sumArr = sum(a1, a2);
 System.out.println(Arrays.toString(sumArr));
+int appendNum = 200; 
+int[] appendArr = append(a1, appendNum);
+int  removeIdx = 5;
+int [] removeArr = remove(a2, removeIdx);
+System.out.println(Arrays.toString(removeArr));
+int sumOfEvens = sumEven(appendArr);
+rotateRight(a1);
+System.out.println(Arrays.toString(appendArr));
+System.out.println(Arrays.toString(removeArr));
+System.out.println(sumOfEvens);
+System.out.println(Arrays.toString(a1));
+
+
 }
 }

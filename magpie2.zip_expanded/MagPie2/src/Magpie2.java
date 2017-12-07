@@ -23,7 +23,15 @@ public class Magpie2 {
 		}else if (statement.indexOf("Dreyer") >=0) {
 			response = "Love her!";
 			
-		} else {
+		}else if(statement.indexOf("Hello")>=0
+				||statement.indexOf("hello")>=0) {
+			response = "Hello! Nice to meet you!";
+		}else if(statement.indexOf("Food")>=0
+				||statement.indexOf("food")>=0) {
+			response = "My favourite food is dumplings";
+		}else if(statement.indexOf("know")>=0) {
+			response = "I know lots of things.";
+		}else {
 			response = getRandomResponse();
 		}
 		return response;
@@ -47,8 +55,12 @@ public class Magpie2 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
-		}
-
+		
+} else if (whichResponse == 4) {
+		response = "I understand.  Interesting.";
+	} else if (whichResponse == 5) {
+		response = "All right then.";
+	}
 		return response;
 	}
 }

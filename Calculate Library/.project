@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Access Calculate</name>
+			<type>2</type>
+			<location>/Users/nicolejeung/Downloads/n_jeung-Aug2017/Access Calculate</location>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -19,8 +19,8 @@ public class DoMath {
 		System.out.println(Calculate.absValue(-8));
 		System.out.println(Calculate.round2(2.44));
 		System.out.println(Calculate.exponent(2.5, 3));
-		System.out.println(Calculate.factorial(8));
-		System.out.println(Calculate.quadForm(1, -6, 9));
+		System.out.println(Calculate.factorial(5));
+		System.out.println(Calculate.quadForm(1, 7, 2.5));
 	}
 
 }
