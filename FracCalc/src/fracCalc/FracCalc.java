@@ -150,35 +150,8 @@ public class FracCalc {
 			return number1;
 		}
 	}
-	public static String simplifyFrac(int[]improperFrac) {
-		int whole=0;
-		int numerator=improperFrac[0];
-		int denominator=improperFrac[1];
-		int greatestFactor=gcf(absValue(numerator), absValue(denominator));
-		numerator/=greatestFactor;
-		denominator/=greatestFactor;
-		if(numerator<0&&denominator<0) {
-			numerator=absValue(numerator);
-			denominator=absValue(denominator);
-		}
-		if(absValue(numerator)%absValue(denominator)==0) {
-			return numerator+"";
-		}else {
-			if(absValue(numerator)>absValue(denominator)) {
-				
-				whole=numerator/denominator;
-				numerator=absValue(numerator)-absValue(whole)*absValue(denominator);
 
-				return whole+"_"+numerator+"/"+absValue(denominator);
-			}else {
-				if((numerator<0&&denominator>0)||(numerator>0&&denominator<0)) {
-					return "-"+absValue(numerator)+"/"+absValue(denominator);
-				}else {
-					return numerator+"/"+absValue(denominator);
-				}					
-			}
-		}
-	}
+
 	public static boolean isDivisibleBy (int dividend, int divisor) {
 		if (dividend%divisor==0) {
 			return true;
